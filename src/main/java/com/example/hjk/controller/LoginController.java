@@ -66,15 +66,6 @@ public class LoginController {
         return sendGet("http://web.juhe.cn:8080/constellation/getAll?consName=%E7%8B%AE%E5%AD%90%E5%BA%A7&type=today&key=df03d0ddd3843f49d52e404d3b692e87");
     }
 
-    @RequestMapping("/toLastToday")
-    @ResponseBody
-    public String toLastToday(){
-        Calendar calendar = Calendar.getInstance();
-        int mouth = calendar.get(Calendar.MONTH)+1;
-        int day = calendar.get(Calendar.DATE);
-        return sendGet("http://api.juheapi.com/japi/toh?key=4001627a38cd2a260a51aee137a6f977&v=1.0&month="+mouth+"&day="+day);
-    }
-
     public String sendGet(String url) {
         String result = "";
         BufferedReader in = null;
